@@ -1,9 +1,8 @@
 import unittest
-from classes.wallclock_angle_calculator import WallclockAngleCalculator
+from wallclock_angle_calculator import WallclockAngleCalculator
 
 
 class WallclockAngleCalculatorTest(unittest.TestCase):
-
     def setUp(self):
         self.positive_data_provider = {
             "midnight": {
@@ -47,11 +46,12 @@ class WallclockAngleCalculatorTest(unittest.TestCase):
     def test_angle(self):
         for key, data in self.positive_data_provider.items():
             calculator = WallclockAngleCalculator(data["hours"], data["mins"])
-            self.assertEquals(data["expected"], calculator.get_angle())
+            self.assertEqual(data["expected"], calculator.get_angle())
 
     def test_invalid_arguments(self):
         for key, data in self.invalid_arguments_provider.items():
             self.assertRaises(ValueError, WallclockAngleCalculator, data["hours"], data["mins"])
+
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(WallclockAngleCalculatorTest)

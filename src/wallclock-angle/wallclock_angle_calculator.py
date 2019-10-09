@@ -1,4 +1,4 @@
-class WallclockAngleCalculator(object):
+class WallclockAngleCalculator:
     def __init__(self, hours, mins):
         self.hours = hours
         self.mins = mins
@@ -32,8 +32,7 @@ class WallclockAngleCalculator(object):
 
     def _get_hours_angle(self):
         one_hour_angle = 360 / 12
-        hours_angle = self.hours * one_hour_angle \
-                      + one_hour_angle * self.mins / 60
+        hours_angle = self.hours * one_hour_angle + one_hour_angle * self.mins / 60
 
         return hours_angle
 

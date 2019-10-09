@@ -1,5 +1,3 @@
 language: python
-php:
-  - '2.7'
 script:
   - cd "$TRAVIS_BUILD_DIR"/src/wallclock-angle && python ./test.py
